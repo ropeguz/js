@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="img/paper-plane.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
     <title>Roviajes</title>
+    <!-- estilos -->
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
@@ -97,7 +98,7 @@ fieldset{
 main{ width: 90%;}
 }
 
-
+/* aqui hay algunas estilos relevantes para el js*/
 #terminoslegales{
     width: 100%;
     height: 100rem;
@@ -151,8 +152,9 @@ main{ width: 90%;}
     </style>
 </head>
 <body>
+<!-- elementos que interfieren con el evento de pulsar en terminos y condiciones *1 -->
     <div id="legal">
-        <p onclick="cierre()" id="cruz">&#128473</p>
+        <p onclick="cierre()" id="cruz">&#128473</p> <!-- este elemento tiene un evento para cerrar terminos y condiciones -->
         <div class="blabla">
         <div id="scroleable">
             <div class="espacio">
@@ -176,9 +178,9 @@ main{ width: 90%;}
         
     </div>
     <div id="terminoslegales"></div>
-    
+  <!-- contenido de la página normal *2 -->  
     <div id="contenedor">
-    <div id="main">
+    <div id="main"> <!-- a partir de aqui contenido que desaparece con el boton-->  
     <h1><img src="../forms/img/paper-plane.png" alt="logo">&nbsp;Roviajes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
     <h2>Viaja con conmigo</h2>
     <h3>Rellena el formulario y entra en un sorteo de un viaje a la ciudad que elijas</h3>
@@ -245,29 +247,32 @@ main{ width: 90%;}
         </section>
         <section>
         <div class="politica"><input type="checkbox" name="" id="privacidad"><label for="privacidad">Acepto la política de privacidad</label>
-        <div class="condiciones"><input type="checkbox" name="" id="terminos"><label for="terminos">Acepto los <span style="color: blue;text-decoration:underline" onclick="terminos()"> términos y condiciones</span></label></div>   
+        <div class="condiciones"><input type="checkbox" name="" id="terminos"><label for="terminos">Acepto los <span style="color: blue;text-decoration:underline" onclick="terminos()"> términos y condiciones</span></label></div>   <!-- enlace con evento con evento -->
         </section>
        
-        <input type="button" value="Participar" id="enviar" onclick="gracias()" class="animate__animated ">
+        <input type="button" value="Participar" id="enviar" onclick="gracias()" "><!-- boton con evento -->
     </form>
     </div>
+  <!-- a partir de aqui contenido que aparece con el boton *3-->  
     <div id="gracias">
         <div><h2 class="gracias">Gracias por participar</h2></div>
         <div> <p class="gracias">En caso de ser ganador nos pondremos en contacto contigo</p></div>
         <div><img src="../forms/img/4076301.gif" alt=""></div>
-        
-       
-        
+
     </div>
+    <!-- javascript -->
     <script>
+    //cambia el modo de display de *1
 function terminos(){
-    document.getElementById('terminoslegales').style.display='block';
+    document.getElementById('terminoslegales').style.display='block'; 
     document.getElementById('legal').style.display='block';
 }
+//cambia el modo de display de *1
 function cierre() {
     document.getElementById('terminoslegales').style.display='none';
     document.getElementById('legal').style.display='none';
 }
+//cambia el modo de display de *2 y 3*
 function gracias(){
     document.getElementById('gracias').style.display='block';
     document.getElementById('main').style.display='none';
