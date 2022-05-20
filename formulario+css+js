@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../forms/css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/paper-plane.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" >
+    <title>Roviajes</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+section{
+    margin: 1em;
+}
+#prefijo{
+    width: 2em;
+}
+.etiqueta{
+    padding-bottom: 0.6em;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2em;
+    color: rgb(90, 32, 143);
+}
+#destino label{
+    margin-right: 0.6em;
+}
+h1{text-align: center;}
+h1, h2, h3{
+    font-family: 'Patua One', cursive;
+    color: rgb(42, 77, 165);
+}
+h1 img{
+    width: 1.5em;
+    height: auto;
+}
+input, select, textarea{
+    background-color: transparent;
+    border: solid rgba(42, 77, 165, 0.495);
+    border-radius: 0.4em;
+    padding: 0.2em;
+}
+
+#enviar{
+background-color: rgb(90, 32, 143);
+font-size: 20px;
+color: white;
+padding:  10px;
+display: block;
+margin: 0 auto;
+}
+#enviar:hover{
+    background-color: rgb(66, 80, 231);
+}
+#enviar:active{
+   
+}
+
+#main{
+    width: 40%;
+    margin: 0 auto;
+    background-color:rgba(162, 229, 235, 0.817) ;
+    padding: 20px;
+    border-radius: 25px;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: url("../../forms/img/travel.png") ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-y: center;
+}
+#contenedor{
+    padding: 20px 0 100px 0;
+    
+}
+fieldset{
+    border: solid rgba(89, 32, 143, 0.5);
+    margin:10px 0 ;
+    border-radius: 1em;
+}
+#ndias{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+#contndias
+{
+    width: 140px;
+}
+
+/* X-Small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) { 
+main{ width: 90%;}
+}
+
+
+#terminoslegales{
+    width: 100%;
+    height: 100rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 500;
+    display: none;
+}
+#cruz{
+    text-align:right;
+    font-size:18pt;
+    padding-right: 0.5rem;
+}
+#cruz:hover{cursor: pointer;}
+
+#legal{
+    right: 25rem;
+    top: 2rem;
+    width: 50%;
+    height: 50rem;
+    position: absolute;
+    z-index: 1000;
+    background-color: aliceblue;
+   display: none;
+}
+
+.blabla{
+    display: flex;
+    justify-content: center;
+}
+.gracias{
+    text-align: center;
+}
+#gracias{
+    margin:  0 auto;
+    width: 50rem;
+    display: none;
+    background-color: white;
+}
+#gracias img{
+    width: 50rem;
+}
+#scroleable{
+    overflow: scroll;
+    width: 100%;
+    height: 45rem;
+}
+.espacio{
+    padding: 0 2rem;
+}
+    </style>
+</head>
+<body>
+    <div id="legal">
+        <p onclick="cierre()" id="cruz">&#128473</p>
+        <div class="blabla">
+        <div id="scroleable">
+            <div class="espacio">
+            <h3>Condiciones Generales</h3>
+            <p>Esta página es un resumen de los aspectos más importantes de las condiciones generales de iubenda, pero no sustituye a la versión completa.
+            </p>
+            <h3>El Servicio</h3>
+            <h5> Sobre iubenda</h5><p> El Servicio ofrecido por el Titular permite al Usuario redactar documentos legales para actividades online (por ejemplo, sitios web, aplicaciones móviles, etc.) de forma independiente sobre la base de la información indicada por el propio Usuario, utilizando una serie de herramientas tecnológicas. Además, el Titular ofrece un servicio de generación, almacenamiento y actualización online de uno o más modelos de documentos. Se excluye cualquier asistencia a los Usuarios en el procedimiento de elección de cláusulas o en la redacción de cláusulas personalizadas por parte del personal de iubenda o cualquier consultor.
+            Por tanto, es responsabilidad exclusiva del Usuario elegir las cláusulas adecuadas a una situación o actividad concreta, para verificar la conformidad de los documentos generados con la legislación vigente, así como para cumplir con todas las disposiciones legales aplicables a la actividad.
+            Teniendo en cuenta lo anterior, el Servicio ofrecido por iubenda no puede ser considerado, ni reemplaza el asesoramiento legal ofrecido por un consultor o experto.</p>
+            <h3>Los documentos generados</h3>
+            <h5>Creación de los documentos</h5> <p>Durante el proceso de generación de los documentos, es responsabilidad exclusiva de los Usuarios realizar las elecciones adecuadas según su caso o actividad concreta y posteriormente verificar que los documentos generados cumplan con las disposiciones legales aplicables. iubenda no proporciona ninguna ayuda a este respecto. Las instrucciones y consejos dentro del generador tienen el único propósito de facilitar el uso del propio generador por parte de los Usuarios y no contienen ninguna información relacionada con uno o más contextos específicos.</p>
+            <h3> Integración de los documentos</h3> <p>Los documentos generados se pueden almacenar en servidores de iubenda e incorporarse a un sitio web o aplicación mediante una serie de herramientas de integración/incrustación. El código de integración de iubenda contiene un contador de visitas que, sin embargo, no recopila datos personales del usuario final.</p>
+            <h3> Uso de los documentos</h3> <p>Los documentos generados solo se pueden integrar mediante el código de integración/incrustación. No se permite copiar y pegar los documentos.</p>
+            <h3>La política de privacidad de iubenda</h3>
+            <h5>Data de los Usuarios suscritos a iubenda</h5><p>Para obtener más información sobre el tratamiento de datos personales, los Usuarios pueden consultar la política de privacidad completa de iubenda.
+            </p>
+           <h3>Responsabilidad</h3>
+           <p>El contenido disponible en iubenda.com y los documentos generados mediante el Servicio están destinados únicamente a fines informativos. Si bien todas las cláusulas y disposiciones dentro de la base de datos del generador han sido redactadas por un equipo de asesores legales altamente calificados y se someten regularmente a revisiones y actualizaciones, los documentos se generan de manera totalmente automatizada. Por lo tanto, no constituyen ni sustituyen la prestación de asesoramiento legal, ni tampoco cualquier asistencia al cliente proporcionado por iubenda establece una relación abogado-cliente. Es por eso que, a pesar de todos los esfuerzos para ofrecer el mejor servicio posible, iubenda no puede garantizar que los documentos generados se ajusten perfectamente a la ley aplicable. Por ello, se aconseja a los usuarios que no confíen en los documentos generados con iubenda sin la asistencia de un abogado cualificado en el sistema/sistemas legales de referencia.</p></div>
+        </div></div>
+        
+    </div>
+    <div id="terminoslegales"></div>
+    
+    <div id="contenedor">
+    <div id="main">
+    <h1><img src="../forms/img/paper-plane.png" alt="logo">&nbsp;Roviajes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+    <h2>Viaja con conmigo</h2>
+    <h3>Rellena el formulario y entra en un sorteo de un viaje a la ciudad que elijas</h3>
+    <form action="">
+        <fieldset><legend>Sobre ti</legend>
+        <section>
+        <div  class="name, etiqueta"><label for="name">Nombre</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="lname">Apellido</label></div>
+        <input type="text" name="" id="name" maxlength="5" placeholder="Nombre">&nbsp;&nbsp;&nbsp;<input type="text" name="" id="lname"placeholder="Apellido">
+        </section>
+        <section>
+        <div class="email, etiqueta"><label for="email">Email</label></div>
+        <input type="email" name="" id="email" placeholder="ejemplo@correo.com" size="48">
+        </section>
+        <section>
+        <div class="telefono, etiqueta"><label for="telefono">Télefono</label></div>
+        <input type="text" name="" value="+34" id="prefijo"><input type="tel" name="" id="telefono" placeholder="600000000" maxlength="9">
+        </section>
+    </fieldset>
+    <fieldset oninput="x.value=parseInt(viajeros.value)+parseInt(dias.value)+parseInt(fecha.value)*(5)"><legend>El viaje</legend>
+        <section id="destino">
+        <div class="destino, etiqueta"><label for="destino">Elige ciudad</label></div>
+        <input type="radio" name="ciudad" id="madrid"><label for="madrid">Madrid</label>
+        <input type="radio" name="ciudad" id="barcelona"><label for="barcelona">Barcelona</label>
+        <input type="radio" name="ciudad" id="malaga"><label for="malaga">Málaga</label>
+        </section>
+        <section>
+        <div class="fecha, etiqueta"><label for="fecha">Elige la fecha de destino</label></div>
+        <input type="week" name="fecha" id="fecha">
+        </section>
+        <section>
+        <div class="viajeros, etiqueta"><label for="viajeros">¿Cúantos viajareis?</label></div>
+        <input type="number" name="viajeros" id="viajeros" max="5" min="1">
+        </section>
+        <section>
+           <div class="dias, etiqueta"><label for="">Selecciona número de días</label></div>
+           <div id="contndias">
+           <div id="ndias">
+            <p>2</p>
+           <p>3</p>
+           <p>4</p>
+           <p>5</p>
+           <p>6</p>
+           <p>7</p></div>
+           <input type="range" name="dias" id="dias" min="2" max="7" ></div>
+        </section>
+        <section>
+            <div class="ahorro, etiqueta"><label for="">Si te toca ahorras</label></div>
+            <output name="x" for="viajeros dias"></output><label for=""> €</label>
+        </section>
+    </fieldset>
+        <section>
+            <div class="conocido, etiqueta"><label for="como">¿Cómo nos has conocido?</label></div>
+            <select name="" id="">
+                <option value="">Elige una opción</option>
+                <option value="">televisión</option>
+                <option value="" >web</option>
+                <option value="">amigos</option>
+                <option value="">de casualidad</option>
+            </select>
+        </section>
+        <section>
+            <div class="motivo, etiqueta"><label for="motivo">¿Porqué deberías ser el ganador?</label></div>
+            <textarea name="" id="motivo" cols="75" rows="5" style="resize: none;" placeholder="Puedes ganar puntos extras por originalidad" spellcheck="true"></textarea>
+        </section>
+        <section>
+        <div class="politica"><input type="checkbox" name="" id="privacidad"><label for="privacidad">Acepto la política de privacidad</label>
+        <div class="condiciones"><input type="checkbox" name="" id="terminos"><label for="terminos">Acepto los <span style="color: blue;text-decoration:underline" onclick="terminos()"> términos y condiciones</span></label></div>   
+        </section>
+       
+        <input type="button" value="Participar" id="enviar" onclick="gracias()" class="animate__animated ">
+    </form>
+    </div>
+    <div id="gracias">
+        <div><h2 class="gracias">Gracias por participar</h2></div>
+        <div> <p class="gracias">En caso de ser ganador nos pondremos en contacto contigo</p></div>
+        <div><img src="../forms/img/4076301.gif" alt=""></div>
+        
+       
+        
+    </div>
+    <script>
+function terminos(){
+    document.getElementById('terminoslegales').style.display='block';
+    document.getElementById('legal').style.display='block';
+}
+function cierre() {
+    document.getElementById('terminoslegales').style.display='none';
+    document.getElementById('legal').style.display='none';
+}
+function gracias(){
+    document.getElementById('gracias').style.display='block';
+    document.getElementById('main').style.display='none';
+}
+    </script>
+</div>
+</body>
+</html>
